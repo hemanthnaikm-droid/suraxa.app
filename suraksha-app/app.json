@@ -1,0 +1,59 @@
+{
+  "expo": {
+    "name": "Suraksha",
+    "slug": "suraksha",
+    "version": "2.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.jpeg",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/splash.jpeg",
+      "resizeMode": "contain",
+      "backgroundColor": "#0a1628"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.suraksha.app",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Suraksha needs your location to share it with emergency contacts and find safe routes.",
+        "NSMicrophoneUsageDescription": "Suraksha needs microphone access to record emergency audio evidence."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.jpeg",
+        "backgroundColor": "#0a1628"
+      },
+      "package": "com.suraksha.app",
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "RECORD_AUDIO",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS"
+      ]
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Suraksha needs your location to share with emergency contacts and find safe routes."
+        }
+      ],
+      [
+        "expo-av",
+        {
+          "microphonePermission": "Suraksha needs microphone to record emergency audio evidence."
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "e06f7638-1b46-408d-8ad7-7c382a568071"
+      }
+    },
+    "owner": "hemanthnaik007"
+  }
+}
