@@ -124,6 +124,18 @@ export function Tag({ label, type = 'ai' }) {
     </View>
   );
 }
+// ── SOS Trigger ─────────────────────────────────────────────────
+// Add this inside your main component's return, before closing tag
+// Change pattern to whatever the user selects in settings:
+// "up-down-up" | "down-up-down" | "up-up-up" | "down-down-down"
+
+<SOSTrigger
+  pattern={userSelectedPattern}
+  onSOS={() => {
+    // call your SOS function here
+    sendSOSAlert({ userName, location, contacts });
+  }}
+/>
 
 // ── Hint text ─────────────────────────────────────────────────
 export function Hint({ children }) {
@@ -154,15 +166,4 @@ const styles = StyleSheet.create({
   tagText:      { fontSize: 10, fontWeight: '700', letterSpacing: 0.5 },
   hint:         { fontSize: 11, color: 'rgba(255,255,255,0.25)', textAlign: 'center', lineHeight: 17, marginTop: 12, paddingHorizontal: 4 },
 });
-// ── Hint text ─────────────────────────────────────────────────
-// Add this inside your main component's return, before closing tag
-// Change pattern to whatever the user selects in settings:
-// "up-down-up" | "down-up-down" | "up-up-up" | "down-down-down"
 
-<SOSTrigger
-  pattern={userSelectedPattern}
-  onSOS={() => {
-    // call your SOS function here
-    sendSOSAlert({ userName, location, contacts });
-  }}
-/>
