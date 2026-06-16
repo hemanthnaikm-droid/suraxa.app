@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SOSTrigger from "./SOSTrigger";
 import {
   View, Text, StyleSheet, TouchableOpacity, TextInput,
   ScrollView, KeyboardAvoidingView, Platform, Modal,
@@ -140,6 +141,14 @@ export function AuthModal({ mode, onClose, onSuccess }) {
     </Modal>
   );
 }
+// ── SOS Trigger ─────────────────────────────────────────────────
+<SOSTrigger
+  pattern={userSelectedPattern}
+  onSOS={() => {
+    // call your SOS function here
+    sendSOSAlert({ userName, location, contacts });
+  }}
+/>
 
 const s = StyleSheet.create({
   screen:         { flex: 1, backgroundColor: C.bg },
@@ -193,3 +202,4 @@ const s = StyleSheet.create({
   switchText: { fontSize: 12, color: 'rgba(255,255,255,0.43)' },
   switchLink: { color: '#60a5fa', fontWeight: '600' },
 });
+
